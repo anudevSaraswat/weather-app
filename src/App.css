@@ -3,12 +3,9 @@
   background-color: #61dafb;
 }
 
-/* .container {
-  background-color: gray;
-} */
-
-.App {
-  text-align: center;
+.container {
+  display: inline-flex;
+  align-items: center;
 }
 
 .App-logo {

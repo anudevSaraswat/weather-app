@@ -1,3 +1,5 @@
+import "./WeatherBriefingBox.css";
+
 export function WeatherBriefingBox() {
     return (
         <div className="briefing-box">
