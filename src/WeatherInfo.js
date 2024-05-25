@@ -3,8 +3,8 @@ import './WeatherInfo.css';
 
 const currDate = new Date();
 const currentDate = currDate.getDate();
-const weekDay = currDate.toLocaleString('en-us', {weekday:'long'})
-const currentMonth = currDate.toLocaleString('en-us', {month:'long'})
+const weekDay = currDate.toLocaleString('en-us', { weekday: 'long' })
+const currentMonth = currDate.toLocaleString('en-us', { month: 'long' })
 
 const dateStr = `${weekDay}, ${currentDate}${ordinalNumberPrefix(currentDate)} ${currentMonth} ${currDate.getFullYear()}`
 
@@ -22,19 +22,18 @@ function ordinalNumberPrefix(date) {
     }
 }
 
-// Thursday, 23rd May 2023
 export function WeatherInfo() {
     return (
         <div>
             <h2>{dateStr}</h2>
-            <input></input>
+            <input className="location-input"></input>
             <div className="flex-container">
-                <WeatherInfoBox></WeatherInfoBox>                
-                <WeatherInfoBox></WeatherInfoBox>                
-                <WeatherInfoBox></WeatherInfoBox>                
-                <WeatherInfoBox></WeatherInfoBox>                
-                <WeatherInfoBox></WeatherInfoBox>                
-                <WeatherInfoBox></WeatherInfoBox>                
+                <WeatherInfoBox></WeatherInfoBox>
+                <WeatherInfoBox></WeatherInfoBox>
+                <WeatherInfoBox></WeatherInfoBox>
+                <WeatherInfoBox></WeatherInfoBox>
+                <WeatherInfoBox></WeatherInfoBox>
+                <WeatherInfoBox></WeatherInfoBox>
             </div>
         </div>
     );

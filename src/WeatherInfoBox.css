@@ -1,6 +1,7 @@
 .info-box {
     background-color: white;
     border: 1px solid red;
+    border-radius: 10px;
     width: 290px;
     height: 190px;
 }
