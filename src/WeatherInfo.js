@@ -1,4 +1,5 @@
 import { WeatherInfoBox } from "./WeatherInfoBox";
+import { WeatherInput } from "./WeatherInput";
 import './WeatherInfo.css';
 
 const currDate = new Date();
@@ -22,11 +23,11 @@ function ordinalNumberPrefix(date) {
     }
 }
 
-export function WeatherInfo() {
+export function WeatherInfo({ fetch }) {
     return (
         <div>
             <h2>{dateStr}</h2>
-            <input className="location-input"></input>
+            <WeatherInput fetch={fetch}></WeatherInput>
             <div className="flex-container">
                 <WeatherInfoBox></WeatherInfoBox>
                 <WeatherInfoBox></WeatherInfoBox>
