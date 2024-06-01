@@ -1,0 +1,13 @@
+.location-input {
+    border: 2px solid brown;
+    width: 400px;
+    height: 20px;
+    border-radius: 25px;
+    margin-bottom: 10px;
+}
+
+.fetch-button {
+    width: 100px;
+    height: 30px;
+    margin-left: 10px;
+}
