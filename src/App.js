@@ -7,12 +7,12 @@ const apiKey = process.env.REACT_APP_WEATHER_API_KEY;
 
 console.log(apiKey);
 
-async function fetchWeatherData(city) {
-  return axios.get(`https://api.openweathermap.org/data/2.5/weather?${city}&units=metric&appid=${apiKey}`);
+async function fetchWeatherData(location) {
+  return axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${apiKey}`);
 }
 
-function fetch() {
-  fetchWeatherData().then(response => {
+function fetch(location) {
+  fetchWeatherData(location).then(response => {
     console.log("response:", response);
   }).catch(err => {
     console.log("error:", err);
