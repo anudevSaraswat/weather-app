@@ -1,6 +1,23 @@
 import './App.css';
 import { WeatherBriefingBox } from './WeatherBriefingBox';
 import { WeatherInfo } from './WeatherInfo';
+import axios from 'axios';
+
+const apiKey = process.env.REACT_APP_WEATHER_API_KEY;
+
+console.log(apiKey);
+
+async function fetchWeatherData(city) {
+  return axios.get(`https://api.openweathermap.org/data/2.5/weather?${city}&units=metric&appid=${apiKey}`);
+}
+
+function fetch() {
+  fetchWeatherData().then(response => {
+    console.log("response:", response);
+  }).catch(err => {
+    console.log("error:", err);
+  })
+}
 
 function App() {
   return (
@@ -8,7 +25,7 @@ function App() {
       <h1 className="heading">Weather Forecast</h1>
       <div className="container">
         <WeatherBriefingBox></WeatherBriefingBox>
-        <WeatherInfo></WeatherInfo>
+        <WeatherInfo fetch={fetch}></WeatherInfo>
       </div>
     </div>
   );
