@@ -1,11 +1,11 @@
 import "./WeatherInfoBox.css";
 
-export function WeatherInfoBox() {
+export function WeatherInfoBox({ label, value }) {
     return (
         <div className="info-box">
-            <h3 className="weather-info-heading">Feels like</h3>
-            <p className="temperature">23 degree</p>
-            <i className="icon">icon</i>
+            <h3 className="weather-info-heading">{label}</h3>
+            <p className="temperature">{value}</p>
+            <i className="icon">--</i>
         </div>
     );
 }

@@ -30,8 +30,17 @@ function App() {
 
       let description = weather.description;
       let temperature = main.temp;
+      let feelsLike = main.feels_like;
+      let wind = response.data.wind.speed;
+      let humidity = main.humidity;
 
-      setWeatherData({ description: description, temperature: temperature });
+      setWeatherData({
+        description: description,
+        temperature: temperature,
+        feelsLike: feelsLike,
+        wind: wind,
+        humidity: humidity,
+      });
     } else {
       alert("Enter location to get weather information")
     }
@@ -43,7 +52,7 @@ function App() {
       <div className="container">
         <WeatherBriefingBox description={weatherData.description} temperature={weatherData.temperature}>
         </WeatherBriefingBox>
-        <WeatherInfo fetch={fetchAndParseWeatherData}></WeatherInfo>
+        <WeatherInfo fetch={fetchAndParseWeatherData} weatherData={weatherData}></WeatherInfo>
       </div>
     </div>
   );

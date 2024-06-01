@@ -23,18 +23,22 @@ function ordinalNumberPrefix(date) {
     }
 }
 
-export function WeatherInfo({ fetch }) {
+export function WeatherInfo({ fetch, weatherData }) {
+
+    const feelsLike = `${weatherData.feelsLike} \u00b0C`
+    const wind = `${weatherData.wind} m/s`
+    const humidity = `${weatherData.humidity}%`
     return (
         <div>
             <h2>{dateStr}</h2>
             <WeatherInput fetch={fetch}></WeatherInput>
             <div className="flex-container">
-                <WeatherInfoBox></WeatherInfoBox>
-                <WeatherInfoBox></WeatherInfoBox>
-                <WeatherInfoBox></WeatherInfoBox>
-                <WeatherInfoBox></WeatherInfoBox>
-                <WeatherInfoBox></WeatherInfoBox>
-                <WeatherInfoBox></WeatherInfoBox>
+                <WeatherInfoBox label="Feels Like" value={feelsLike}></WeatherInfoBox>
+                <WeatherInfoBox label="Wind" value={wind}></WeatherInfoBox>
+                <WeatherInfoBox label="Humidity" value={humidity}></WeatherInfoBox>
+                <WeatherInfoBox label="Rain"></WeatherInfoBox>
+                <WeatherInfoBox label="Sunrise"></WeatherInfoBox>
+                <WeatherInfoBox label="Sunset"></WeatherInfoBox>
             </div>
         </div>
     );
