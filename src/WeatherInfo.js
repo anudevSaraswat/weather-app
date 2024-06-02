@@ -33,12 +33,12 @@ export function WeatherInfo({ fetch, weatherData }) {
             <h2>{dateStr}</h2>
             <WeatherInput fetch={fetch}></WeatherInput>
             <div className="flex-container">
-                <WeatherInfoBox label="Feels Like" value={feelsLike}></WeatherInfoBox>
-                <WeatherInfoBox label="Wind" value={wind}></WeatherInfoBox>
-                <WeatherInfoBox label="Humidity" value={humidity}></WeatherInfoBox>
-                <WeatherInfoBox label="Rain"></WeatherInfoBox>
-                <WeatherInfoBox label="Sunrise" value={weatherData.sunrise}></WeatherInfoBox>
-                <WeatherInfoBox label="Sunset" value={weatherData.sunset}></WeatherInfoBox>
+                <WeatherInfoBox label="Feels Like" value={feelsLike} icon='/feelslike.png'></WeatherInfoBox>
+                <WeatherInfoBox label="Wind" value={wind} icon='/wind.png'></WeatherInfoBox>
+                <WeatherInfoBox label="Humidity" value={humidity} icon='/humidity.png'></WeatherInfoBox>
+                <WeatherInfoBox label="Rain" value="N/A" icon='/rain.png'></WeatherInfoBox>
+                <WeatherInfoBox label="Sunrise" value={weatherData.sunrise} icon='/sunrise.png'></WeatherInfoBox>
+                <WeatherInfoBox label="Sunset" value={weatherData.sunset} icon='/sunset.png'></WeatherInfoBox>
             </div>
         </div>
     );
