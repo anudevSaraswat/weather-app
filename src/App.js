@@ -17,6 +17,7 @@ function App() {
     rain: "--",
     sunrise: "--",
     sunset: "--",
+    icon: "--"
   }
 
   const [weatherData, setWeatherData] = useState(data);
@@ -36,6 +37,7 @@ function App() {
       let humidity = main.humidity;
       let sunrise = new Date(sys.sunrise * 1000);
       let sunset = new Date(sys.sunset * 1000);
+      let icon = weather.icon;
 
       setWeatherData({
         description: description,
@@ -44,7 +46,8 @@ function App() {
         wind: wind,
         humidity: humidity,
         sunrise: `${sunrise.getHours()}:${sunrise.getMinutes()}`,
-        sunset: `${sunset.getHours()}:${sunset.getMinutes()}`
+        sunset: `${sunset.getHours()}:${sunset.getMinutes()}`,
+        icon: icon
       });
     } else {
       alert("Enter location to get weather information")
@@ -55,7 +58,7 @@ function App() {
     <div>
       <h1 className="heading">Weather Forecast</h1>
       <div className="container">
-        <WeatherBriefingBox description={weatherData.description} temperature={weatherData.temperature}>
+        <WeatherBriefingBox icon={weatherData.icon} description={weatherData.description} temperature={weatherData.temperature}>
         </WeatherBriefingBox>
         <WeatherInfo fetch={fetchAndParseWeatherData} weatherData={weatherData}></WeatherInfo>
       </div>
