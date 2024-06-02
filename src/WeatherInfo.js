@@ -37,8 +37,8 @@ export function WeatherInfo({ fetch, weatherData }) {
                 <WeatherInfoBox label="Wind" value={wind}></WeatherInfoBox>
                 <WeatherInfoBox label="Humidity" value={humidity}></WeatherInfoBox>
                 <WeatherInfoBox label="Rain"></WeatherInfoBox>
-                <WeatherInfoBox label="Sunrise"></WeatherInfoBox>
-                <WeatherInfoBox label="Sunset"></WeatherInfoBox>
+                <WeatherInfoBox label="Sunrise" value={weatherData.sunrise}></WeatherInfoBox>
+                <WeatherInfoBox label="Sunset" value={weatherData.sunset}></WeatherInfoBox>
             </div>
         </div>
     );

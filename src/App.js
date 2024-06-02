@@ -27,12 +27,15 @@ function App() {
 
       const weather = response.data.weather[0];
       const main = response.data.main;
+      const sys = response.data.sys;
 
       let description = weather.description;
       let temperature = main.temp;
       let feelsLike = main.feels_like;
       let wind = response.data.wind.speed;
       let humidity = main.humidity;
+      let sunrise = new Date(sys.sunrise * 1000);
+      let sunset = new Date(sys.sunset * 1000);
 
       setWeatherData({
         description: description,
@@ -40,6 +43,8 @@ function App() {
         feelsLike: feelsLike,
         wind: wind,
         humidity: humidity,
+        sunrise: `${sunrise.getHours()}:${sunrise.getMinutes()}`,
+        sunset: `${sunset.getHours()}:${sunset.getMinutes()}`
       });
     } else {
       alert("Enter location to get weather information")
